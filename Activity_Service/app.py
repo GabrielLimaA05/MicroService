@@ -12,5 +12,8 @@ from DisciplineController.DisciplineController import disciplines_blueprint
 app.register_blueprint(activities_blueprint)
 app.register_blueprint(disciplines_blueprint)
 
+with app.app_context():
+    db.create_all()  # Cria todas as tabelas
+
 if __name__ == '__main__':
     app.run(debug=True)
