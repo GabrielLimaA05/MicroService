@@ -29,3 +29,7 @@ def delete_discipline(discipline_id):
         return jsonify(Discipline.get_all())
     except DisciplineNotFound:
         return jsonify({'message': 'Discipline not found'}), 404
+
+@disciplines_blueprint.route('/disciplines/', methods=['GET'])
+def get_disciplines():
+    return jsonify(Discipline.get_all())

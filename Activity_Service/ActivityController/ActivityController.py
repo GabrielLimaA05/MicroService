@@ -33,3 +33,7 @@ def delete_activity(activity_id):
         return jsonify(Activity.get_all())
     except ActivityNotFound:
         return jsonify({'message': 'Activity not found'}), 404
+
+@activities_blueprint.route('/activities/', methods=['GET'])
+def get_activities():
+    return jsonify(Activity.get_all())
